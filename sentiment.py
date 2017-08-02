@@ -44,33 +44,33 @@ def find_features(document):
 
     return features
 
-open_file = open("pickled_algos_originalnaivebayes5k.pickle", "rb")
+open_file = open("PICKLE FILES/pickled_algos_originalnaivebayes5k.pickle", "rb")
 classifier = pickle.load(open_file)
 open_file.close()
 
 
-open_file = open("pickled_algos_MNB_classifier5k.pickle", "rb")
+open_file = open("PICKLE FILES/pickled_algos_MNB_classifier5k.pickle", "rb")
 MNB_classifier = pickle.load(open_file)
 open_file.close()
 
 
 
-open_file = open("pickled_algos_BernoulliNB_classifier5k.pickle", "rb")
+open_file = open("PICKLE FILES/pickled_algos_BernoulliNB_classifier5k.pickle", "rb")
 BernoulliNB_classifier = pickle.load(open_file)
 open_file.close()
 
 
-open_file = open("pickled_algos_LogisticRegression_classifier5k.pickle", "rb")
+open_file = open("PICKLE FILES/pickled_algos_LogisticRegression_classifier5k.pickle", "rb")
 LogisticRegression_classifier = pickle.load(open_file)
 open_file.close()
 
 
-open_file = open("pickled_algos_LinearSVC_classifier5k.pickle", "rb")
+open_file = open("PICKLE FILES/pickled_algos_LinearSVC_classifier5k.pickle", "rb")
 LinearSVC_classifier = pickle.load(open_file)
 open_file.close()
 
 
-open_file = open("pickled_algos_SGDC_classifier5k.pickle", "rb")
+open_file = open("PICKLE FILES/pickled_algos_SGDC_classifier5k.pickle", "rb")
 SGDC_classifier = pickle.load(open_file)
 open_file.close()
 
