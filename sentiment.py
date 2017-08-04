@@ -27,11 +27,11 @@ class VoteClassifier(ClassifierI):
 
 #READS THE PICKLED WORD FEATURES AS WELL AS SAVED CLASSIFIERS
 
-documents_f = open("pickled_algos_documents.pickle", "rb")
+documents_f = open("PICKLE FILES/pickled_algos_documents.pickle", "rb")
 documents = pickle.load(documents_f)
 documents_f.close()
 
-word_features5k_f = open("pickled_algos_word_features5k.pickle", "rb")
+word_features5k_f = open("PICKLE FILES/pickled_algos_word_features5k.pickle", "rb")
 word_features = pickle.load(word_features5k_f)
 word_features5k_f.close()
 
