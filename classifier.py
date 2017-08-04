@@ -32,8 +32,8 @@ class VoteClassifier(ClassifierI):
         return conf
 
 
-short_pos = open("pos.txt", "r").read()
-short_neg = open("neg.txt", "r").read()
+short_pos = open("DATASET USED/pos.txt", "r").read()
+short_neg = open("DATASET USED/neg.txt", "r").read()
 
 # move this up here
 all_words = []
@@ -59,7 +59,7 @@ for p in short_neg.split('\n'):
         if w[1][0] in allowed_word_types:
             all_words.append(w[0].lower())
 
-save_documents = open("pickled_algos_documents.pickle", "wb")
+save_documents = open("PICKLE FILES/pickled_algos_documents.pickle", "wb")
 pickle.dump(documents, save_documents)
 save_documents.close()
 
@@ -67,7 +67,7 @@ all_words = nltk.FreqDist(all_words)
 
 word_features = list(all_words.keys())[:5000]
 
-save_word_features = open("pickled_algos_word_features5k.pickle", "wb")
+save_word_features = open("PICKLE FILES/pickled_algos_word_features5k.pickle", "wb")
 pickle.dump(word_features, save_word_features)
 save_word_features.close()
 
@@ -94,7 +94,7 @@ print("Original Naive Bayes Algo accuracy percent:", (nltk.classify.accuracy(cla
 classifier.show_most_informative_features(15)
 
 ###############
-save_classifier = open("pickled_algos_originalnaivebayes5k.pickle", "wb")
+save_classifier = open("PICKLE FILES/pickled_algos_originalnaivebayes5k.pickle", "wb")
 pickle.dump(classifier, save_classifier)
 save_classifier.close()
 
@@ -102,7 +102,7 @@ MNB_classifier = SklearnClassifier(MultinomialNB())
 MNB_classifier.train(training_set)
 print("MNB_classifier accuracy percent:", (nltk.classify.accuracy(MNB_classifier, testing_set)) * 100)
 
-save_classifier = open("pickled_algos_MNB_classifier5k.pickle", "wb")
+save_classifier = open("PICKLE FILES/pickled_algos_MNB_classifier5k.pickle", "wb")
 pickle.dump(MNB_classifier, save_classifier)
 save_classifier.close()
 
@@ -110,7 +110,7 @@ BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
 BernoulliNB_classifier.train(training_set)
 print("BernoulliNB_classifier accuracy percent:", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set)) * 100)
 
-save_classifier = open("pickled_algos_BernoulliNB_classifier5k.pickle", "wb")
+save_classifier = open("PICKLE FILES/pickled_algos_BernoulliNB_classifier5k.pickle", "wb")
 pickle.dump(BernoulliNB_classifier, save_classifier)
 save_classifier.close()
 
@@ -119,7 +119,7 @@ LogisticRegression_classifier.train(training_set)
 print("LogisticRegression_classifier accuracy percent:",
       (nltk.classify.accuracy(LogisticRegression_classifier, testing_set)) * 100)
 
-save_classifier = open("pickled_algos_LogisticRegression_classifier5k.pickle", "wb")
+save_classifier = open("PICKLE FILES/pickled_algos_LogisticRegression_classifier5k.pickle", "wb")
 pickle.dump(LogisticRegression_classifier, save_classifier)
 save_classifier.close()
 
@@ -127,7 +127,7 @@ LinearSVC_classifier = SklearnClassifier(LinearSVC())
 LinearSVC_classifier.train(training_set)
 print("LinearSVC_classifier accuracy percent:", (nltk.classify.accuracy(LinearSVC_classifier, testing_set)) * 100)
 
-save_classifier = open("pickled_algos_LinearSVC_classifier5k.pickle", "wb")
+save_classifier = open("PICKLE FILES/pickled_algos_LinearSVC_classifier5k.pickle", "wb")
 pickle.dump(LinearSVC_classifier, save_classifier)
 save_classifier.close()
 
@@ -140,6 +140,6 @@ SGDC_classifier = SklearnClassifier(SGDClassifier())
 SGDC_classifier.train(training_set)
 print("SGDClassifier accuracy percent:", nltk.classify.accuracy(SGDC_classifier, testing_set) * 100)
 
-save_classifier = open("pickled_algos_SGDC_classifier5k.pickle", "wb")
+save_classifier = open("PICKLE FILES/pickled_algos_SGDC_classifier5k.pickle", "wb")
 pickle.dump(SGDC_classifier, save_classifier)
 save_classifier.close()
